@@ -1,0 +1,3 @@
+1st Milestone - ($150) Create webpage from the prompts, by formatting the HTML on the website and arranging the content on the Webpage, with CSS formatting and all. Creating the Prompts in such a way that it can request for pictures and videos
+2nd Milestone - ($150) Host the Code Webpage on the Cloud, such that a user can come and access the link and answerr the prompts and then the website will be generated
+3rd Milestone - ($150) Finalizing the Project (edited) 

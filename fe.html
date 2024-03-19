@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parameter Interaction</title>
+</head>
+<body>
+    <h1>Enter a parameter:</h1>
+    <form id="dataForm">
+        <input type="text" name="parameter" id="parameter">
+        <button type="submit">Send</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('dataForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var formData = new FormData(document.getElementById('dataForm'));
+            fetch('/process_data', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = 'Result: ' + data.result;
+            });
+        });
+    </script>
+</body>
+</html>
