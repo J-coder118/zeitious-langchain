@@ -96,10 +96,12 @@ def intro():
         # Insert variable values into the template using string formatting
         rendered_html = HTML.format(pa0=global_exp[0],pa1=global_exp[1], pa2=global_exp[2], pa3=global_exp[3], pa4=global_exp[4], pa5=global_exp[5], pa6=global_exp[6], pa7=global_exp[7], pa8=global_exp[8], pa9=global_exp[9],  info=introduction)
     # Save the rendered HTML to a file
+        file_path = 'templates/html_1/output.html'
+        os.chmod(file_path, 0o600)
         with open("templates/html_1/output.html", "w", encoding="utf-8") as file:
             file.write(rendered_html)
-        
-        return 
+        permissions = os.stat(file_path).st_mode
+        return permissions
     except Exception as e:
         return f"error_intro: {e}"
         # Process the data received from the frontend
