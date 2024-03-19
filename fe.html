@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Parameter Interaction</title>
+    <title>Coaching Exercise</title>
 </head>
 <body>
-    <h1>Enter a parameter:</h1>
-    <form id="dataForm">
-        <input type="text" name="parameter" id="parameter">
-        <button type="submit">Send</button>
-    </form>
-    <p id="result"></p>
+    <h1>Coaching Exercise</h1>
+    <form action="https://langchain-project-main.vercel.app/result" method="POST">
+        <label for="subject">Enter subject:</label>
+        <input type="text" id="subject" name="subject">
 
-    <script>
-        document.getElementById('dataForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            var formData = new FormData(document.getElementById('dataForm'));
-            fetch('/process_data', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('result').innerText = 'Result: ' + data.result;
-            });
-        });
-    </script>
+        <label for="problem">Enter problem:</label>
+        <input type="text" id="problem" name="problem">
+        
+        <label for="intro">Enter introduction:</label>
+        <input type="text" id="intro" name="intro">
+        <button type="submit">Submit</button>
+    </form>
+
 </body>
 </html>
