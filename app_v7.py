@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from langchain.chains import LLMChain
+from langchain import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from flask import Flask, request, render_template
@@ -27,7 +27,7 @@ This is problem: {focus}"""
 coach_pmt = """you are a talented {subject} coach. As {subject} coach, with this user's intro:{user_intro}, generate perfect introduction to user and use 'Life Coach' as a name of coach"""
 
 
-llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=1, openai_api_key=api_key)
+llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=1, api_key=api_key)
 prompt_exp = PromptTemplate(template=exp_pmt, input_variables=["var", "focus"])
 llm_chain_exp = LLMChain(prompt=prompt_exp, llm=llm)
 
