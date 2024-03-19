@@ -64,6 +64,9 @@ def gen_exp(subject, problem):
     else:
         return experiences
 
+@app.route('/', methods=['POST'])
+def index():
+    return "hello"
 
 @app.route('/result', methods=['POST'])
 def subject():
