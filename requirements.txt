@@ -2,4 +2,4 @@ langchain
 langchain_openai
 python-dotenv
 openai
-streamlit
+flask

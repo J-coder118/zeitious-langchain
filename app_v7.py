@@ -1,4 +1,3 @@
-import streamlit as st
 from dotenv import load_dotenv
 from langchain import LLMChain
 from langchain.prompts import PromptTemplate
@@ -97,7 +96,7 @@ def intro():
         # Insert variable values into the template using string formatting
         rendered_html = HTML.format(pa0=global_exp[0],pa1=global_exp[1], pa2=global_exp[2], pa3=global_exp[3], pa4=global_exp[4], pa5=global_exp[5], pa6=global_exp[6], pa7=global_exp[7], pa8=global_exp[8], pa9=global_exp[9],  info=introduction)
     # Save the rendered HTML to a file
-        with open("html_1/output.html", "w", encoding="utf-8") as file:
+        with open("templates/html_1/output.html", "w", encoding="utf-8") as file:
             file.write(rendered_html)
         
         return 

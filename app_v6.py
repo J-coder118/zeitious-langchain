@@ -10,7 +10,7 @@ load_dotenv()
 api_key = os.getenv('OPENAI_API_KEY')
 
 # Import specific variables from var file
-from var import CTA_1, CTA_2, VIDEO_CTA, VAR_3, HTML
+from var import  HTML
 
 
 # Initialize the language model chain once
