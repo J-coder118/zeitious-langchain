@@ -24,14 +24,16 @@ Please share 10 different ways this hits them on a daily basis.”
 Remember that you can also tell chatty to speak to the pain of someone who is a professional, or "doing well" so it doesn't go  for the bottom half of the pool and give me result as 6 paragraphs .
 This is problem: {focus}"""  
 
-coach_pmt = """you are a talented {subject} coach. As a {subject} coach, with this user's intro:{user_intro} generate perfect and detailed introduction about you to user regarding to this user's intro:{user_intro} and use 'Life Coach' as a name of coach"""
+coach_pmt = """give me an author's introduction of about 3 paragraphs from this short information about me: {user_intro}
+
+            """
 
 
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=1, api_key=api_key)
 prompt_exp = PromptTemplate(template=exp_pmt, input_variables=["var", "focus"])
 llm_chain_exp = LLMChain(prompt=prompt_exp, llm=llm)
 
-prompt_coach = PromptTemplate(template=coach_pmt, input_variables=["subject", "problem", "user_intro"])
+prompt_coach = PromptTemplate(template=coach_pmt, input_variables=["subject", "user_intro"])
 llm_chain_coach = LLMChain(prompt=prompt_coach, llm=llm)
 
 
