@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from langchain import LLMChain
+from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from flask import Flask, request, render_template, render_template_string
@@ -70,7 +70,6 @@ def index():
 
 @app.route('/result', methods=['POST'])
 def subject():
-    global global_sub
     try :
         subject = request.form['subject']
         problem = request.form['problem']
