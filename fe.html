@@ -2,18 +2,36 @@
 <html>
 <head>
     <title>Coaching Exercise</title>
+    <style>
+        .input-box {
+            margin-bottom: 10px;
+            font-size: 15px;
+            width: 100px;
+        }
+        .text {
+            width: 350px;
+            height: 80px;
+            font-size: 15px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Coaching Exercise</h1>
-    <form action="https://langchain-project-main.vercel.app/result" method="POST">
-        <label for="subject">Enter subject:</label>
-        <input type="text" id="subject" name="subject">
+    <h1 style="text-align: center;">Coaching Exercise</h1>
+    <form action="https://langchain-project-main.vercel.app/result" method="POST" style="width: 200px; margin: auto;">
+        <div class="input-box">
+            <label for="subject">Enter subject:</label>
+            <textarea class="text" type="text" id="subject" name="subject"></textarea>
+        </div>
 
-        <label for="problem">Enter problem:</label>
-        <input type="text" id="problem" name="problem">
+        <div class="input-box">
+            <label for="problem">Enter problem:</label>
+            <textarea  class="text" type="text" id="problem" name="problem"></textarea>
+        </div>
         
-        <label for="intro">Enter introduction:</label>
-        <input type="text" id="intro" name="intro">
+        <div class="input-box">
+            <label for="intro">Enter introduction:</label>
+            <textarea class="text" type="text" id="intro" name="intro"></textarea>
+        </div>
         <button type="submit">Submit</button>
     </form>
 
