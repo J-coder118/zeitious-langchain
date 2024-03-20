@@ -28,3 +28,6 @@ The Compelling Text Generator is a Streamlit application that uses OpenAI's GPT-
    ```bash
    streamlit run app_v5.py
    ```
+// "functions": {
+  //   "app_v7.py": {"maxDuration": 100}
+  // }
