@@ -49,7 +49,7 @@ def regenerate_experience_text(var, focus):
     return result["text"]
 
 def generate_coach_text(subject, user_intro):
-    input_dict = {"subject": subject, "user_intro": user_intro}
+    input_dict = {"user_intro": user_intro}
     result = llm_chain_coach.invoke(input_dict)
     return result["text"]
 
