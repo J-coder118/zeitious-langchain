@@ -39,20 +39,22 @@ llm_chain_coach = LLMChain(prompt=prompt_coach, llm=llm)
 def generate_experience_text(var, focus):
     input_dict = {"var": var, "focus": focus}
     result = llm_chain_exp.invoke(input_dict)
-    return result
+    return result["text"]
 
 def regenerate_experience_text(var, focus):
     input_dict = {"var": var, "focus": focus}
     result = llm_chain_exp.invoke(input_dict)
-    return result
+    return result["text"]
 
 def generate_coach_text(subject, user_intro):
     input_dict = {"subject": subject, "user_intro": user_intro}
-    result = llm_chain_coach.run(input_dict)
-    return result
+    result = llm_chain_coach.invoke(input_dict)
+    return result["text"]
 
 def gen_exp(subject, problem):
     exp = generate_experience_text(subject, problem)
+    print(exp)
+
     experiences = exp.split("\n\n")
     if len(experiences) != 10:
         print("eee")
@@ -76,6 +78,8 @@ def subject():
         intro = request.form['intro']
 
         experiences = gen_exp(subject, problem)
+
+        print("experience", experiences)
         introduction = generate_coach_text(subject, intro)
         # Insert variable values into the template using string formatting
         rendered_html = HTML.format(pa0=experiences[0],pa1=experiences[1], pa2=experiences[2], pa3=experiences[3], pa4=experiences[4], pa5=experiences[5], pa6=experiences[6], pa7=experiences[7], pa8=experiences[8], pa9=experiences[9],  info=introduction)
