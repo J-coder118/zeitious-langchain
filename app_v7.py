@@ -82,7 +82,7 @@ def experience():
 
         experiences = gen_exp(subject, problem)
         global_exp = experiences
-
+        return 
     except Exception as e:
         return f"error_subject: {e}"
 
