@@ -85,12 +85,7 @@ def subject():
         introduction = generate_coach_text(intro)
         # Insert variable values into the template using string formatting
         rendered_html = HTML.format(pa0=experiences[0],pa1=experiences[1], pa2=experiences[2], pa3=experiences[3], pa4=experiences[4], pa5=experiences[5], pa6=experiences[6], pa7=experiences[7], pa8=experiences[8], pa9=experiences[9],  info=introduction)
-    # Save the rendered HTML to a file
-        # file_path = 'templates/html_1/output.html'
-        # os.chmod(file_path, 0o600)
-        # with open("templates/html_1/output.html", "w", encoding="utf-8") as file:
-        #     file.write(rendered_html)
-        # permissions = os.stat(file_path).st_mode
+        
         return render_template_string(rendered_html)
     except Exception as e:
         return f"error_subject: {e}"
