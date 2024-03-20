@@ -7,6 +7,6 @@
       { "src": "/(.*)", "dest": "/app_v7.py" }
     ],
     "functions": {
-      "maxDuration": 30
+      "maxDuration": 100
     }
   }
