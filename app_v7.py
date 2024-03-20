@@ -85,22 +85,11 @@ def subject():
         introduction = generate_coach_text(intro)
         # Insert variable values into the template using string formatting
         rendered_html = HTML.format(pa0=experiences[0],pa1=experiences[1], pa2=experiences[2], pa3=experiences[3], pa4=experiences[4], pa5=experiences[5], pa6=experiences[6], pa7=experiences[7], pa8=experiences[8], pa9=experiences[9],  info=introduction)
-        
+
         return render_template_string(rendered_html)
     except Exception as e:
         return f"error_subject: {e}"
     
-
-# @app.route('/problem', methods=['POST'])
-# def problem():
-#     global global_exp, global_sub
-#     try:
-#         problem = request.form['problem']
-#         experiences = gen_exp(global_sub, problem)
-#         global_exp = experiences
-#         return global_exp
-#     except Exception as e:
-#         return f"error_problem: {e}"
 
 # @app.route('/intro', methods=['POST'])
 # def intro():
