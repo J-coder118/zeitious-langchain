@@ -383,7 +383,7 @@ HTML = """
                         </div>
                     </div>
                 </div>
-                <div class="row" style="z-index: 2; display: flex;">
+                <div class="row" style="z-index: 2; display: flex; flex-wrap: wrap;">
                     <div opt-id="33" class="col s12 m4"
                         style="padding: 0px 10px; background-color: #000; color: #fff; margin: 5px; width: 30%;">
                         <div class="col__style col__style--top opt-border"
