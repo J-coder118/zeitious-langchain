@@ -5,10 +5,7 @@
     ],
     "routes": [
       { "src": "/(.*)", "dest": "/app_v7.py" }
-    ],
-    "functions": {
-      "/app_v7.py": {"maxDuration": 100}
-    }
+    ]
 
  }
   
