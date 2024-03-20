@@ -38,12 +38,12 @@ llm_chain_coach = LLMChain(prompt=prompt_coach, llm=llm)
 # Define a function to generate compelling text using the language model chain
 def generate_experience_text(var, focus):
     input_dict = {"var": var, "focus": focus}
-    result = llm_chain_exp.run(input_dict)
+    result = llm_chain_exp.invoke(input_dict)
     return result
 
 def regenerate_experience_text(var, focus):
     input_dict = {"var": var, "focus": focus}
-    result = llm_chain_exp.run(input_dict)
+    result = llm_chain_exp.invoke(input_dict)
     return result
 
 def generate_coach_text(subject, user_intro):
