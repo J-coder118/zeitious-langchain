@@ -72,47 +72,40 @@ def gen_exp(subject, problem):
 def index():
     return "hello"
 
-@app.route('/result', methods=['POST'])
-def subject():
+@app.route('/experience', methods=['POST'])
+def experience():
     try :
+        global global_exp
         subject = request.form['subject']
         problem = request.form['problem']
-        intro = request.form['intro']
+        # intro = request.form['intro']
 
         experiences = gen_exp(subject, problem)
+        global_exp = experiences
 
-        print("experience", experiences)
+    except Exception as e:
+        return f"error_subject: {e}"
+
+
+
+@app.route('/intro', methods=['POST'])
+def intro():
+    global global_exp
+    try:
+        intro = request.form['intro']
+        # print("experience", global_exp)
         introduction = generate_coach_text(intro)
         # Insert variable values into the template using string formatting
-        rendered_html = HTML.format(pa0=experiences[0],pa1=experiences[1], pa2=experiences[2], pa3=experiences[3], pa4=experiences[4], pa5=experiences[5], pa6=experiences[6], pa7=experiences[7], pa8=experiences[8], pa9=experiences[9],  info=introduction)
+        rendered_html = HTML.format(pa0=global_exp[0],pa1=global_exp[1], pa2=global_exp[2], pa3=global_exp[3], pa4=global_exp[4], pa5=global_exp[5], pa6=global_exp[6], pa7=global_exp[7], pa8=global_exp[8], pa9=global_exp[9],  info=introduction)
 
         return render_template_string(rendered_html)
     except Exception as e:
-        return f"error_subject: {e}"
+        return f"error_intro: {e}"
+        # Process the data received from the frontend
     
-
-# @app.route('/intro', methods=['POST'])
-# def intro():
-#     global global_exp, global_sub
-#     try:
-#         intro = request.form['intro']
-#         introduction = generate_coach_text(global_sub, intro)
-#         # Insert variable values into the template using string formatting
-#         rendered_html = HTML.format(pa0=global_exp[0],pa1=global_exp[1], pa2=global_exp[2], pa3=global_exp[3], pa4=global_exp[4], pa5=global_exp[5], pa6=global_exp[6], pa7=global_exp[7], pa8=global_exp[8], pa9=global_exp[9],  info=introduction)
-#     # Save the rendered HTML to a file
-#         # file_path = 'templates/html_1/output.html'
-#         # os.chmod(file_path, 0o600)
-#         # with open("templates/html_1/output.html", "w", encoding="utf-8") as file:
-#         #     file.write(rendered_html)
-#         # permissions = os.stat(file_path).st_mode
-#         return render_template_string(rendered_html)
-#     except Exception as e:
-#         return f"error_intro: {e}"
-#         # Process the data received from the frontend
-    
-# @app.route('/visit')
-# def display_html():
-#     return render_template('html_1/output.html')
+@app.route('/visit')
+def display_html():
+    return render_template('html_1/output.html')
 
 
 if __name__ == '__main__':
