@@ -48,7 +48,7 @@ def regenerate_experience_text(var, focus):
     result = llm_chain_exp.invoke(input_dict)
     return result["text"]
 
-def generate_coach_text(subject, user_intro):
+def generate_coach_text(user_intro):
     input_dict = {"user_intro": user_intro}
     result = llm_chain_coach.invoke(input_dict)
     return result["text"]
@@ -82,7 +82,7 @@ def subject():
         experiences = gen_exp(subject, problem)
 
         print("experience", experiences)
-        introduction = generate_coach_text(subject, intro)
+        introduction = generate_coach_text(intro)
         # Insert variable values into the template using string formatting
         rendered_html = HTML.format(pa0=experiences[0],pa1=experiences[1], pa2=experiences[2], pa3=experiences[3], pa4=experiences[4], pa5=experiences[5], pa6=experiences[6], pa7=experiences[7], pa8=experiences[8], pa9=experiences[9],  info=introduction)
     # Save the rendered HTML to a file
