@@ -374,7 +374,7 @@ HTML = """
                                             style="font-size: 41px; line-height: 53px;">
                                             <div class="opt-text-wrapper">
                                                 <div style="text-align:center" style="color: #fff !important"><span
-                                                        style="color: #fff !important">What you will learn</span></div>
+                                                        style="color: #fff !important">What you will learn from out {subject} Coach</span></div>
                                             </div>
                                         </div>
                                     </div>
