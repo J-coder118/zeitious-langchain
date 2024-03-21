@@ -97,7 +97,7 @@ def intro():
         # print("experience", global_exp)
         introduction = generate_coach_text(intro)
         # Insert variable values into the template using string formatting
-        rendered_html = HTML.format(global_sub, pa0=global_exp[0],pa1=global_exp[1], pa2=global_exp[2], pa3=global_exp[3], pa4=global_exp[4], pa5=global_exp[5], pa6=global_exp[6], pa7=global_exp[7], pa8=global_exp[8], pa9=global_exp[9],  info=introduction)
+        rendered_html = HTML.format(subject=global_sub, pa0=global_exp[0],pa1=global_exp[1], pa2=global_exp[2], pa3=global_exp[3], pa4=global_exp[4], pa5=global_exp[5], pa6=global_exp[6], pa7=global_exp[7], pa8=global_exp[8], pa9=global_exp[9],  info=introduction)
 
         return render_template_string(rendered_html)
     except Exception as e:
