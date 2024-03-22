@@ -13,20 +13,17 @@ app = Flask(__name__)
 # Import specific variables from var file
 from var import  HTML
 
-global_sub = ""
+global_title = ""
 global_exp = ""
 
 # Initialize the language model chain once
 # template = """You are the marketing guru Dan Kennedy and based on the following text: '{var}' you will rewrite it to make it more compelling, keep the same length. {focus}
-exp_pmt = """You are a seasoned {var} coach. You are assisting a client (me) in identifying the exact way my client thinks about this challenge in their words. Please List out TEN hell experiences my client goes through DAILY related to this problem: LIST YOUR PROBLEM HERE. e.g. They need life insurance but don't have it.
-Imagine they are talking with a friend at Starbucks about this problem. Exactly what would they say? (Remember they are not a professional)
-Please share 10 different ways this hits them on a daily basis.”
-Remember that you can also tell chatty to speak to the pain of someone who is a professional, or "doing well" so it doesn't go  for the bottom half of the pool and give me result as 6 paragraphs .
-This is problem: {focus}"""  
+exp_pmt = """You are a seasoned {var} coach. You are assisting a client (me) who has this problem {focus}, pls generate the TEN what client will learn from out this coach. """  
 
-coach_pmt = """give me an author's introduction of about 3 paragraphs from this short information about me: {user_intro}
+coach_pmt = """give me an author's introduction of from this short information about me: {user_intro}"""
 
-            """
+title_pmt = """give me only attractive title for website from this subject
+                subject: {subject}"""
 
 
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=1, api_key=api_key)
@@ -36,16 +33,19 @@ llm_chain_exp = LLMChain(prompt=prompt_exp, llm=llm)
 prompt_coach = PromptTemplate(template=coach_pmt, input_variables=["subject", "user_intro"])
 llm_chain_coach = LLMChain(prompt=prompt_coach, llm=llm)
 
+prompt_title = PromptTemplate(template=title_pmt, input_variables=["subject"])
+llm_chain_title = LLMChain(prompt=prompt_title, llm=llm)
 
 # Define a function to generate compelling text using the language model chain
 def generate_experience_text(var, focus):
     input_dict = {"var": var, "focus": focus}
     result = llm_chain_exp.invoke(input_dict)
+    # print("reslut", result)
     return result["text"]
 
-def regenerate_experience_text(var, focus):
-    input_dict = {"var": var, "focus": focus}
-    result = llm_chain_exp.invoke(input_dict)
+def generate_title(subject):
+    input_dict = {"subject": subject}
+    result = llm_chain_title.invoke(input_dict)
     return result["text"]
 
 def generate_coach_text(user_intro):
@@ -55,17 +55,17 @@ def generate_coach_text(user_intro):
 
 def gen_exp(subject, problem):
     exp = generate_experience_text(subject, problem)
-    print(exp)
 
     experiences = exp.split("\n\n")
     if len(experiences) != 10:
-        print("eee")
+        print("eee", len(experiences))
         # exp = regenerate_experience_text(subject, problem)
         # experiences = exp.split("\n\n")
         experiences = exp.split("\n")
         return experiences
         # gen_exp(subject, problem)
     else:
+        print("---------------------", len(experiences))
         return experiences
 
 @app.route('/', methods=['POST'])
@@ -75,15 +75,16 @@ def index():
 @app.route('/experience', methods=['POST'])
 def experience():
     try :
-        global global_exp, global_sub
+        global global_exp, global_title
         subject = request.form['subject']
         problem = request.form['problem']
         # intro = request.form['intro']
 
         experiences = gen_exp(subject, problem)
+        title = generate_title(subject)
         global_exp = experiences
-        global_sub = subject
-        return "done"
+        global_title = title
+        return f"{len(experiences)}"
     except Exception as e:
         return f"error_subject: {e}"
 
@@ -91,13 +92,13 @@ def experience():
 
 @app.route('/intro', methods=['POST'])
 def intro():
-    global global_exp, global_sub
+    global global_exp, global_title
     try:
         intro = request.form['intro']
         # print("experience", global_exp)
         introduction = generate_coach_text(intro)
         # Insert variable values into the template using string formatting
-        rendered_html = HTML.format(subject=global_sub, pa0=global_exp[0],pa1=global_exp[1], pa2=global_exp[2], pa3=global_exp[3], pa4=global_exp[4], pa5=global_exp[5], pa6=global_exp[6], pa7=global_exp[7], pa8=global_exp[8], pa9=global_exp[9],  info=introduction)
+        rendered_html = HTML.format(title=global_title, pa0=global_exp[0],pa1=global_exp[1], pa2=global_exp[2], pa3=global_exp[3], pa4=global_exp[4], pa5=global_exp[5], pa6=global_exp[6], pa7=global_exp[7], pa8=global_exp[8], pa9=global_exp[9],  info=introduction)
 
         return render_template_string(rendered_html)
     except Exception as e:

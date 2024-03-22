@@ -79,8 +79,7 @@ HTML = """
                                                 style="font-size: 40px; line-height: 43px">
                                                 <div class="opt-text-wrapper">
                                                     <div style="text-align: center">
-                                                        <b><span class="white-color-text" style="color: #fff">It's Time
-                                                                To Reintroduce Yourself.<br /><span
+                                                        <b><span class="white-color-text" style="color: #fff">{title}<br /><span
                                                                     class="primary-color-text"
                                                                     style="color: #bf973f">Master the Art of
                                                                     Self-Reinvention.</span></span></b>
@@ -374,7 +373,7 @@ HTML = """
                                             style="font-size: 41px; line-height: 53px;">
                                             <div class="opt-text-wrapper">
                                                 <div style="text-align:center" style="color: #fff !important"><span
-                                                        style="color: #fff !important">What you will learn from out {subject} Coach</span></div>
+                                                        style="color: #fff !important">What you will learn</span></div>
                                             </div>
                                         </div>
                                     </div>
