@@ -81,8 +81,7 @@ HTML = """
                                                     <div style="text-align: center">
                                                         <b><span class="white-color-text" style="color: #fff">{title}<br /><span
                                                                     class="primary-color-text"
-                                                                    style="color: #bf973f">Master the Art of
-                                                                    Self-Reinvention.</span></span></b>
+                                                                    style="color: #bf973f"> Let's embark on this transformative journey together and turn your dreams into reality. </span></span></b>
                                                     </div>
                                                 </div>
                                             </div>
@@ -178,11 +177,10 @@ HTML = """
                                                                 style="display: none">&nbsp;</span>This is 2024
                                                             —<br />The world is changing.<br />Your
                                                             work is changing.<br />Your industry is
-                                                            changing.<br />It’s time for you to learn how to
-                                                            change the way you think, act and achieve.<br /><br />
+                                                            changing.<br />Elevate Your Potential with Expert Guidance! Join Us to Unlock Your Success and Achieve Your Dreams.<br /><br />
                                                             <span class="primary-color-text"
                                                                 style="color: #bf973f"><b>It’s Time To Learn How To
-                                                                    ReInvent
+                                                                    improve
                                                                     Yourself</b></span></span><br />
                                                     </div>
                                                 </div>

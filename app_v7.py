@@ -22,7 +22,7 @@ exp_pmt = """You are a seasoned {var} coach. You are assisting a client (me) who
 
 coach_pmt = """give me an author's introduction of from this short information about me: {user_intro}"""
 
-title_pmt = """give me only attractive title for website from this subject
+title_pmt = """give me One and only attractive title for website from this subject
                 subject: {subject}"""
 
 
