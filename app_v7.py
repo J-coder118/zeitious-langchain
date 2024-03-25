@@ -27,22 +27,29 @@ coach_pmt = """give me an author's introduction of from this short information a
 title_pmt = """give me One and only attractive title for website from this subject without quotation.
                 subject: {subject}"""
 
-imagine_pmt = """
-I used this sentence.
-"👉🏾&nbsp;</i></i>Waking
-    up in the morning feeling completely
-    excited about who you are BEING in the world
-    and what are you doing with your time.<br /><span
-        class="dark-color-text"><i><i>👉🏾&nbsp;</i></i>Feeling
-        that spark of passion, things that
-        deeply matters to
-        you</span><br /><i><i>👉🏾&nbsp;</i></i>Imagine just
-    being myself in every situation,
-    not having to put on a show for anyone."
-give me points like this(with 👉🏾 and put <br /> at end of each sentence) for an {subject} coach website
+# imagine_pmt = """
+# I used this sentence.
+# "👉🏾&nbsp;</i></i>Waking
+#     up in the morning feeling completely
+#     excited about who you are BEING in the world
+#     and what are you doing with your time.<br /><span
+#         class="dark-color-text"><i><i>👉🏾&nbsp;</i></i>Feeling
+#         that spark of passion, things that
+#         deeply matters to
+#         you</span><br /><i><i>👉🏾&nbsp;</i></i>Imagine just
+#     being myself in every situation,
+#     not having to put on a show for anyone."
+# give me points like this(with 👉🏾 and put <br /> at end of each sentence) for an {subject} coach website
     
-    """
+#     """
 
+imagine_pmt = """
+"👉🏾 Waking up in the morning feeling completely excited about who you are BEING in the world and what are you doing with your time.
+ 👉🏾 Feeling that spark of passion, things that deeply matters to you.
+ 👉🏾 Imagine just being myself in every situation, not having to put on a show for anyone."
+give me points like above (with 👉🏾 and put <br /> at end of each sentence) for an {subject} coach website
+    """
+    
 
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=1, api_key=api_key)
 prompt_exp = PromptTemplate(template=exp_pmt, input_variables=["var", "focus"])
@@ -127,7 +134,6 @@ def intro():
         intro = request.form['intro']
         # print("experience", global_exp)
         introduction = generate_coach_text(intro)
-        time.sleep(5)
         imagine = generate_imagine(global_subject)
         # Insert variable values into the template using string formatting
         ttx = global_exp[0].split(": ")
