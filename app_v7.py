@@ -78,17 +78,17 @@ def gen_exp(subject, problem):
     exp = generate_experience_text(subject, problem)
 
     experiences = exp.split("@")
-    print(experiences)
-    if len(experiences) != 11:
-        print("eee", len(experiences))
-        # exp = regenerate_experience_text(subject, problem)
-        # experiences = exp.split("\n\n")
-        experiences = exp.split("\n\n")
-        return experiences
-        # gen_exp(subject, problem)
-    else:
-        print("---------------------@", len(experiences))
-        return experiences
+    # print(experiences)
+    # if len(experiences) != 11:
+    #     print("eee", len(experiences))
+    #     # exp = regenerate_experience_text(subject, problem)
+    #     # experiences = exp.split("\n\n")
+    #     experiences = exp.split("\n\n")
+    #     return experiences
+    #     # gen_exp(subject, problem)
+    # else:
+    print("---------------------@", len(experiences))
+    return experiences
     
 def generate_imagine(subject):
     input_dict = {"subject": subject}
