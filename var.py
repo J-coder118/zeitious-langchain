@@ -237,7 +237,7 @@ HTML = """
                             ">
                                                     <div class="opt-text-wrapper">
                                                         <div style="text-align: center">
-                                                            <div class="dark-color-text"><i><i>
+                                                            <div class="dark-color-text">
                                                             {imagine}
                                                             </div><br />
                                                         </div>
