@@ -81,11 +81,11 @@ def gen_exp(subject, problem):
         print("eee", len(experiences))
         # exp = regenerate_experience_text(subject, problem)
         # experiences = exp.split("\n\n")
-        experiences = exp.split("\n")
+        experiences = exp.split("\n\n")
         return experiences
         # gen_exp(subject, problem)
     else:
-        print("---------------------", len(experiences))
+        print("---------------------@", len(experiences))
         return experiences
     
 def generate_imagine(subject):
@@ -107,7 +107,7 @@ def experience():
 
         experiences = gen_exp(subject, problem)
         title = generate_title(subject)
-        imagine = generate_imagine(subject)
+        imagine = "sdfds"#generate_imagine(subject)
         global_exp = experiences
         global_title = title
         global_imagine = imagine
