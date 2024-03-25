@@ -55,7 +55,7 @@ HTML = """
         <!--*********************************************************************************************************-->
         <!--************ HERO ***************************************************************************************-->
         <!--*********************************************************************************************************-->
-        <header id="ts-hero" class="ts-full-screen ts-separate-bg-element" style="height: 850px; position: relative; overflow: hidden;">
+        <header id="ts-hero" class="ts-full-screen ts-separate-bg-element" style="height: 670px; position: relative; overflow: hidden;">
             <!--HERO CONTENT ****************************************************************************************-->
             <div class="block__style opt-border" opt-id="block-background" style="
             padding: 60px 0px;
@@ -343,8 +343,7 @@ HTML = """
                                         <div class="opt-element dark-color-text h2" opt-id="35"
                                             opt-element="sub-headline">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><b><span class="white-color-text">FIRE
-                                                            Training</span></b></div>
+                                                <div style="text-align:center"><b><span class="white-color-text">{title0}</span></b></div>
                                             </div>
                                         </div>
                                     </div>
@@ -357,7 +356,7 @@ HTML = """
                                         <div class="opt-element dark-color-text body-text" opt-id="36"
                                             opt-element="text" style="font-size: 18px; line-height: 27px;">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><span class="white-color-text">{pa0}</span></div>
+                                                <div style="text-align:center"><span class="white-color-text">{sentence0}</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -384,8 +383,7 @@ HTML = """
                                         <div class="opt-element dark-color-text h2" opt-id="40"
                                             opt-element="sub-headline">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><b><span class="white-color-text">Deep
-                                                            Thinking</span></b></div>
+                                                <div style="text-align:center"><b><span class="white-color-text">{title1}</span></b></div>
                                             </div>
                                         </div>
                                     </div>
@@ -398,7 +396,7 @@ HTML = """
                                         <div class="opt-element dark-color-text body-text" opt-id="41"
                                             opt-element="text" style="font-size: 18px; line-height: 27px;">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><span class="white-color-text">{pa1}</span><br></div>
+                                                <div style="text-align:center"><span class="white-color-text">{sentence1}</span><br></div>
                                             </div>
                                         </div>
                                     </div>
@@ -425,8 +423,7 @@ HTML = """
                                         <div class="opt-element dark-color-text h2" opt-id="61"
                                             opt-element="sub-headline">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><b><span class="white-color-text">Elite
-                                                            Community</span></b></div>
+                                                <div style="text-align:center"><b><span class="white-color-text">{title2}</span></b></div>
                                             </div>
                                         </div>
                                     </div>
@@ -439,7 +436,7 @@ HTML = """
                                         <div class="opt-element dark-color-text body-text" opt-id="62"
                                             opt-element="text" style="font-size: 18px; line-height: 27px;">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><span class="white-color-text">{pa2}</span><br></div>
+                                                <div style="text-align:center"><span class="white-color-text">{sentence2}</span><br></div>
                                             </div>
                                         </div>
                                     </div>
@@ -466,8 +463,7 @@ HTML = """
                                         <div class="opt-element dark-color-text h2" opt-id="35"
                                             opt-element="sub-headline">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><b><span class="white-color-text">FIRE
-                                                            Training</span></b></div>
+                                                <div style="text-align:center"><b><span class="white-color-text">{title3}</span></b></div>
                                             </div>
                                         </div>
                                     </div>
@@ -480,7 +476,7 @@ HTML = """
                                         <div class="opt-element dark-color-text body-text" opt-id="36"
                                             opt-element="text" style="font-size: 18px; line-height: 27px;">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><span class="white-color-text">{pa3}.</span></div>
+                                                <div style="text-align:center"><span class="white-color-text">{sentence3}.</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -507,8 +503,7 @@ HTML = """
                                         <div class="opt-element dark-color-text h2" opt-id="35"
                                             opt-element="sub-headline">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><b><span class="white-color-text">FIRE
-                                                            Training</span></b></div>
+                                                <div style="text-align:center"><b><span class="white-color-text">{title4}</span></b></div>
                                             </div>
                                         </div>
                                     </div>
@@ -521,7 +516,7 @@ HTML = """
                                         <div class="opt-element dark-color-text body-text" opt-id="36"
                                             opt-element="text" style="font-size: 18px; line-height: 27px;">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><span class="white-color-text">{pa4}.</span></div>
+                                                <div style="text-align:center"><span class="white-color-text">{sentence4}.</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -548,8 +543,7 @@ HTML = """
                                         <div class="opt-element dark-color-text h2" opt-id="35"
                                             opt-element="sub-headline">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><b><span class="white-color-text">FIRE
-                                                            Training</span></b></div>
+                                                <div style="text-align:center"><b><span class="white-color-text">{title5}</span></b></div>
                                             </div>
                                         </div>
                                     </div>
@@ -562,7 +556,7 @@ HTML = """
                                         <div class="opt-element dark-color-text body-text" opt-id="36"
                                             opt-element="text" style="font-size: 18px; line-height: 27px;">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><span class="white-color-text">{pa5}.</span></div>
+                                                <div style="text-align:center"><span class="white-color-text">{sentence5}.</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -589,8 +583,7 @@ HTML = """
                                         <div class="opt-element dark-color-text h2" opt-id="35"
                                             opt-element="sub-headline">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><b><span class="white-color-text">FIRE
-                                                            Training</span></b></div>
+                                                <div style="text-align:center"><b><span class="white-color-text">{title6}</span></b></div>
                                             </div>
                                         </div>
                                     </div>
@@ -603,7 +596,7 @@ HTML = """
                                         <div class="opt-element dark-color-text body-text" opt-id="36"
                                             opt-element="text" style="font-size: 18px; line-height: 27px;">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><span class="white-color-text">{pa6}.</span></div>
+                                                <div style="text-align:center"><span class="white-color-text">{sentence6}.</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -630,8 +623,7 @@ HTML = """
                                         <div class="opt-element dark-color-text h2" opt-id="35"
                                             opt-element="sub-headline">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><b><span class="white-color-text">FIRE
-                                                            Training</span></b></div>
+                                                <div style="text-align:center"><b><span class="white-color-text">{title7}</span></b></div>
                                             </div>
                                         </div>
                                     </div>
@@ -644,7 +636,7 @@ HTML = """
                                         <div class="opt-element dark-color-text body-text" opt-id="36"
                                             opt-element="text" style="font-size: 18px; line-height: 27px;">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><span class="white-color-text">{pa7}.</span></div>
+                                                <div style="text-align:center"><span class="white-color-text">{sentence7}.</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -671,8 +663,7 @@ HTML = """
                                         <div class="opt-element dark-color-text h2" opt-id="35"
                                             opt-element="sub-headline">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><b><span class="white-color-text">FIRE
-                                                            Training</span></b></div>
+                                                <div style="text-align:center"><b><span class="white-color-text">{title8}</span></b></div>
                                             </div>
                                         </div>
                                     </div>
@@ -685,7 +676,7 @@ HTML = """
                                         <div class="opt-element dark-color-text body-text" opt-id="36"
                                             opt-element="text" style="font-size: 18px; line-height: 27px;">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><span class="white-color-text">{pa8}.</span></div>
+                                                <div style="text-align:center"><span class="white-color-text">{sentence8}.</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -712,8 +703,7 @@ HTML = """
                                         <div class="opt-element dark-color-text h2" opt-id="35"
                                             opt-element="sub-headline">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><b><span class="white-color-text">FIRE
-                                                            Training</span></b></div>
+                                                <div style="text-align:center"><b><span class="white-color-text">{title9}</span></b></div>
                                             </div>
                                         </div>
                                     </div>
@@ -726,7 +716,7 @@ HTML = """
                                         <div class="opt-element dark-color-text body-text" opt-id="36"
                                             opt-element="text" style="font-size: 18px; line-height: 27px;">
                                             <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><span class="white-color-text">{pa9}.</span></div>
+                                                <div style="text-align:center"><span class="white-color-text">{sentence9}.</span></div>
                                             </div>
                                         </div>
                                     </div>
