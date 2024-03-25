@@ -19,7 +19,7 @@ global_imagine = ""
 
 # Initialize the language model chain once
 # template = """You are the marketing guru Dan Kennedy and based on the following text: '{var}' you will rewrite it to make it more compelling, keep the same length. {focus}
-exp_pmt = """You are a seasoned {var} coach. You are assisting a client (me) who has this problem {focus}, pls generate the TEN what client will learn from out this coach. Be sure to generate TEN description and title in paragraph."""  
+exp_pmt = """You are a seasoned {var} coach. You are assisting a client (me) who has this problem {focus}, pls generate the TEN what client will learn from out this coach. Be sure to generate TEN descriptions and title in paragraph and each paragraph should have '@'mark at the end of paragraph. then remove other sentence except for TEN paragraphs"""  
 
 coach_pmt = """give me an author's introduction of from this short information about me: {user_intro}"""
 
@@ -76,9 +76,10 @@ def generate_coach_text(user_intro):
 def gen_exp(subject, problem):
     exp = generate_experience_text(subject, problem)
 
-    experiences = exp.split("\n\n")
-    if len(experiences) != 10:
-        print("eee", len(experiences))
+    experiences = exp.split("@")
+    print("experience", experiences)
+    if len(experiences) != 11:
+        print("eee", exp, len(experiences))
         # exp = regenerate_experience_text(subject, problem)
         # experiences = exp.split("\n\n")
         experiences = exp.split("\n")
@@ -165,6 +166,7 @@ def intro():
                                     title5 = title5, sentence5 = sentence5, title6 = title6, sentence6 = sentence6, title7 = title7, sentence7 = sentence7, title8 = title8, sentence8=sentence8,
                                     title9 = title9, sentence9 = sentence9,   info=introduction)
 
+        print("end")
         return render_template_string(rendered_html)
     except Exception as e:
         return f"error_intro: {e}"
