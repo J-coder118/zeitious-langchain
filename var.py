@@ -97,30 +97,6 @@ HTML = """
                           text-align: center;
                           max-width: 97%;
                         ">
-                                            <div class="opt-button__text-container" style="
-                            background: linear-gradient(
-                              to bottom,
-                              #bf973f,
-                              #fbc85f
-                            );
-                            color: #fff;
-                            padding: 20px;
-                            font-size: 20px;
-                          ">
-                                                <div
-                                                    class="opt-button__text-target white-color-text white-color-text--hover label">
-                                                    <b>CLICK HERE TO REGISTER FOR THE RECORDING</b>
-                                                </div>
-                                                <div
-                                                    class="opt-button__sub-text-target white-color-text white-color-text--hover body-text">
-                                                    YOU WILL NEED TO JOIN THE INNER CIRCLE ON THE NEXT
-                                                    PAGE
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="row" style="z-index: 1; display: flex">
@@ -174,14 +150,11 @@ HTML = """
                                                 <div class="opt-text-wrapper">
                                                     <div style="text-align: center; color: #fff">
                                                         <span class="white-color-text"><span data-cke-bookmark="1"
-                                                                style="display: none">&nbsp;</span>This is 2024
-                                                            —<br />The world is changing.<br />Your
-                                                            work is changing.<br />Your industry is
-                                                            changing.<br />Elevate Your Potential with Expert Guidance! Join Us to Unlock Your Success and Achieve Your Dreams.<br /><br />
+                                                                style="display: none">&nbsp;</span>T2024 brings change.<br />The world is changing.<br />As the world evolves, so does your work and industry.
+                                                                <br />
+                                                                Unlock your full potential with expert guidance! Join us to turn your dreams into reality.<br /><br />
                                                             <span class="primary-color-text"
-                                                                style="color: #bf973f"><b>It’s Time To Learn How To
-                                                                    improve
-                                                                    Yourself</b></span></span><br />
+                                                                style="color: #bf973f"><b>Now is the moment to discover how to enhance yourself.</b></span></span><br />
                                                     </div>
                                                 </div>
                                             </div>
@@ -197,30 +170,7 @@ HTML = """
                           text-align: center;
                           max-width: 97%;
                         ">
-                                            <div class="opt-button__text-container" style="
-                            background: linear-gradient(
-                              to bottom,
-                              #bf973f,
-                              #fbc85f
-                            );
-                            color: #fff;
-                            padding: 20px;
-                            font-size: 20px;
-                          ">
-                                                <div
-                                                    class="opt-button__text-target white-color-text white-color-text--hover label">
-                                                    <b>CLICK HERE TO REGISTER FOR THE RECORDING</b>
-                                                </div>
-                                                <div
-                                                    class="opt-button__sub-text-target white-color-text white-color-text--hover body-text">
-                                                    YOU WILL NEED TO JOIN THE INNER CIRCLE ON THE NEXT
-                                                    PAGE
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                              
                         </div>
                     </div>
                 </div>
@@ -287,16 +237,9 @@ HTML = """
                             ">
                                                     <div class="opt-text-wrapper">
                                                         <div style="text-align: center">
-                                                            <span class="dark-color-text"><i><i>👉🏾&nbsp;</i></i>Waking
-                                                                up in the morning feeling completely
-                                                                excited about who you are BEING in the world
-                                                                and what are you doing with your time.<br /><span
-                                                                    class="dark-color-text"><i><i>👉🏾&nbsp;</i></i>Feeling
-                                                                    that spark of passion, things that
-                                                                    deeply matters to
-                                                                    you</span><br /><i><i>👉🏾&nbsp;</i></i>Imagine just
-                                                                being myself in every situation,
-                                                                not having to put on a show for anyone.</span><br />
+                                                            <span class="dark-color-text"><i><i>
+                                                            {imagine}
+                                                            </span><br />
                                                         </div>
                                                         <div style="text-align: center">
                                                             <i><i>👉🏾&nbsp;</i></i>to have real connections with

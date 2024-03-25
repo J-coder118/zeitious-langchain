@@ -15,15 +15,32 @@ from var import  HTML
 
 global_title = ""
 global_exp = ""
+global_imagine = ""
 
 # Initialize the language model chain once
 # template = """You are the marketing guru Dan Kennedy and based on the following text: '{var}' you will rewrite it to make it more compelling, keep the same length. {focus}
-exp_pmt = """You are a seasoned {var} coach. You are assisting a client (me) who has this problem {focus}, pls generate the TEN what client will learn from out this coach. Be sure to generate TEN description"""  
+exp_pmt = """You are a seasoned {var} coach. You are assisting a client (me) who has this problem {focus}, pls generate the TEN what client will learn from out this coach. Be sure to generate TEN description and title in paragraph."""  
 
 coach_pmt = """give me an author's introduction of from this short information about me: {user_intro}"""
 
-title_pmt = """give me One and only attractive title for website from this subject
+title_pmt = """give me One and only attractive title for website from this subject without quotation.
                 subject: {subject}"""
+
+imagine_pmt = """
+I used this sentence.
+"👉🏾&nbsp;</i></i>Waking
+    up in the morning feeling completely
+    excited about who you are BEING in the world
+    and what are you doing with your time.<br /><span
+        class="dark-color-text"><i><i>👉🏾&nbsp;</i></i>Feeling
+        that spark of passion, things that
+        deeply matters to
+        you</span><br /><i><i>👉🏾&nbsp;</i></i>Imagine just
+    being myself in every situation,
+    not having to put on a show for anyone."
+give me points like this for an {subject} coach website
+    
+    """
 
 
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=1, api_key=api_key)
@@ -35,6 +52,9 @@ llm_chain_coach = LLMChain(prompt=prompt_coach, llm=llm)
 
 prompt_title = PromptTemplate(template=title_pmt, input_variables=["subject"])
 llm_chain_title = LLMChain(prompt=prompt_title, llm=llm)
+
+prompt_imagine = PromptTemplate(template=imagine_pmt, input_variables=["subject"])
+llm_imagine_title = LLMChain(prompt=prompt_imagine, llm=llm)
 
 # Define a function to generate compelling text using the language model chain
 def generate_experience_text(var, focus):
@@ -67,6 +87,11 @@ def gen_exp(subject, problem):
     else:
         print("---------------------", len(experiences))
         return experiences
+    
+def generate_imagine(subject):
+    input_dict = {"subject": subject}
+    result = llm_imagine_title.invoke(input_dict)
+    return result["text"]
 
 @app.route('/', methods=['POST'])
 def index():
@@ -75,15 +100,17 @@ def index():
 @app.route('/experience', methods=['POST'])
 def experience():
     try :
-        global global_exp, global_title
+        global global_exp, global_title, global_imagine
         subject = request.form['subject']
         problem = request.form['problem']
         # intro = request.form['intro']
 
         experiences = gen_exp(subject, problem)
         title = generate_title(subject)
+        imagine = generate_imagine(subject)
         global_exp = experiences
         global_title = title
+        global_imagine = imagine
         return f"{len(experiences)}"
     except Exception as e:
         return f"error_subject: {e}"
@@ -92,13 +119,13 @@ def experience():
 
 @app.route('/intro', methods=['POST'])
 def intro():
-    global global_exp, global_title
+    global global_exp, global_title, global_imagine
     try:
         intro = request.form['intro']
         # print("experience", global_exp)
         introduction = generate_coach_text(intro)
         # Insert variable values into the template using string formatting
-        rendered_html = HTML.format(title=global_title, pa0=global_exp[0],pa1=global_exp[1], pa2=global_exp[2], pa3=global_exp[3], pa4=global_exp[4], pa5=global_exp[5], pa6=global_exp[6], pa7=global_exp[7], pa8=global_exp[8], pa9=global_exp[9],  info=introduction)
+        rendered_html = HTML.format(title=global_title, imagine=global_imagine,  pa0=global_exp[0],pa1=global_exp[1], pa2=global_exp[2], pa3=global_exp[3], pa4=global_exp[4], pa5=global_exp[5], pa6=global_exp[6], pa7=global_exp[7], pa8=global_exp[8], pa9=global_exp[9],  info=introduction)
 
         return render_template_string(rendered_html)
     except Exception as e:
