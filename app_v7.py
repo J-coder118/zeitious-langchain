@@ -74,7 +74,7 @@ def generate_experience_text(var, focus):
 def generate_title(subject):
     input_dict = {"subject": subject}
     result = llm_chain_title.invoke(input_dict)
-    return result["text"]
+    return result["text"].replace('"', '')
 
 def generate_coach_text(user_intro):
     input_dict = {"user_intro": user_intro}

@@ -150,7 +150,7 @@ HTML = """
                                                 <div class="opt-text-wrapper">
                                                     <div style="text-align: center; color: #fff">
                                                         <span class="white-color-text"><span data-cke-bookmark="1"
-                                                                style="display: none">&nbsp;</span>T2024 brings change.<br />The world is changing.<br />As the world evolves, so does your work and industry.
+                                                                style="display: none">&nbsp;</span>2024 brings change.<br />The world is changing.<br />As the world evolves, so does your work and industry.
                                                                 <br />
                                                                 Unlock your full potential with expert guidance! Join us to turn your dreams into reality.<br /><br />
                                                             <span class="primary-color-text"
