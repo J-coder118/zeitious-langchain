@@ -15,7 +15,7 @@ from var import  HTML
 
 global_title = ""
 global_exp = ""
-global_imagine = ""
+global_subject = ""
 
 # Initialize the language model chain once
 # template = """You are the marketing guru Dan Kennedy and based on the following text: '{var}' you will rewrite it to make it more compelling, keep the same length. {focus}
@@ -100,17 +100,17 @@ def index():
 @app.route('/experience', methods=['POST'])
 def experience():
     try :
-        global global_exp, global_title, global_imagine
+        global global_exp, global_title, global_subject
         subject = request.form['subject']
         problem = request.form['problem']
         # intro = request.form['intro']
 
         experiences = gen_exp(subject, problem)
         title = generate_title(subject)
-        imagine = "sdfds"#generate_imagine(subject)
+        
         global_exp = experiences
         global_title = title
-        global_imagine = imagine
+        global_subject = subject
         return f"{len(experiences)}"
     except Exception as e:
         return f"error_subject: {e}"
@@ -119,11 +119,12 @@ def experience():
 
 @app.route('/intro', methods=['POST'])
 def intro():
-    global global_exp, global_title, global_imagine
+    global global_exp, global_title, global_subject
     try:
         intro = request.form['intro']
         # print("experience", global_exp)
         introduction = generate_coach_text(intro)
+        imagine = generate_imagine(global_subject)
         # Insert variable values into the template using string formatting
         ttx = global_exp[0].split(": ")
         title0 = ttx[0]
@@ -159,7 +160,7 @@ def intro():
         ttx = global_exp[9].split(": ")
         title9 = ttx[0]
         sentence9 = ttx[1]
-        rendered_html = HTML.format(title=global_title, imagine=global_imagine,
+        rendered_html = HTML.format(title=global_title, imagine=imagine,
                                     title0 = title0, sentence0 = sentence0, title1 = title1, sentence1 = sentence1, title2 = title2, sentence2 = sentence2,
                                     title3 = title3, sentence3 = sentence3, title4 = title4, sentence4 = sentence4,
                                     title5 = title5, sentence5 = sentence5, title6 = title6, sentence6 = sentence6, title7 = title7, sentence7 = sentence7, title8 = title8, sentence8=sentence8,
