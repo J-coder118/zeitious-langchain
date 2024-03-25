@@ -165,7 +165,6 @@ def intro():
                                     title5 = title5, sentence5 = sentence5, title6 = title6, sentence6 = sentence6, title7 = title7, sentence7 = sentence7, title8 = title8, sentence8=sentence8,
                                     title9 = title9, sentence9 = sentence9,   info=introduction)
 
-        print("end")
         return render_template_string(rendered_html)
     except Exception as e:
         return f"error_intro: {e}"
