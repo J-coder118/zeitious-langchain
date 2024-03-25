@@ -79,7 +79,7 @@ def gen_exp(subject, problem):
     experiences = exp.split("@")
     print("experience", experiences)
     if len(experiences) != 11:
-        print("eee", exp, len(experiences))
+        print("eee", len(experiences))
         # exp = regenerate_experience_text(subject, problem)
         # experiences = exp.split("\n\n")
         experiences = exp.split("\n")
