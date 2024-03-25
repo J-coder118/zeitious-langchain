@@ -108,12 +108,12 @@ def experience():
         # intro = request.form['intro']
 
         experiences = gen_exp(subject, problem)
-        time.sleep(5)
-        title = generate_title(subject)
+        # time.sleep(5)
+        # # title = generate_title(subject)
         
-        global_exp = experiences
-        global_title = title
-        global_subject = subject
+        # global_exp = experiences
+        # # global_title = title
+        # global_subject = subject
         return f"{len(experiences)}"
     except Exception as e:
         return f"error_subject: {e}"
