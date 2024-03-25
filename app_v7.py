@@ -121,6 +121,12 @@ def experience():
         global_exp = experiences
         global_title = title
         global_subject = subject
+
+        intro = request.form['intro']
+        # print("experience", global_exp)
+        introduction = generate_coach_text(intro)
+        imagine = generate_imagine(global_subject)
+        
         return f"{len(experiences)}"
     except Exception as e:
         return f"error_subject: {e}"
