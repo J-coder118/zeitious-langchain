@@ -20,7 +20,7 @@ global_subject = ""
 
 # Initialize the language model chain once
 # template = """You are the marketing guru Dan Kennedy and based on the following text: '{var}' you will rewrite it to make it more compelling, keep the same length. {focus}
-exp_pmt = """You are a seasoned {var} coach. You are assisting a client (me) who has this problem {focus}, pls generate the TEN what client will learn from out this coach. Be sure to generate TEN descriptions and title in paragraph and each paragraph should have '@'mark at the end of paragraph. then remove other sentence except for TEN paragraphs"""  
+exp_pmt = """You are a seasoned {var} coach. You are assisting a client (me) who has this problem {focus}, pls generate the TEN with(each '@'mark) that client will learn from out this coach."""  
 
 coach_pmt = """give me an author's introduction of from this short information about me: {user_intro}"""
 
