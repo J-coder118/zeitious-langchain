@@ -38,7 +38,7 @@ I used this sentence.
         you</span><br /><i><i>👉🏾&nbsp;</i></i>Imagine just
     being myself in every situation,
     not having to put on a show for anyone."
-give me points like this(with 👉🏾 and </br>) for an {subject} coach website
+give me points like this(with 👉🏾 and put <br /> at end of each sentence) for an {subject} coach website
     
     """
 

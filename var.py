@@ -237,9 +237,9 @@ HTML = """
                             ">
                                                     <div class="opt-text-wrapper">
                                                         <div style="text-align: center">
-                                                            <span class="dark-color-text"><i><i>
+                                                            <div class="dark-color-text"><i><i>
                                                             {imagine}
-                                                            </span><br />
+                                                            </div><br />
                                                         </div>
                                                         <div style="text-align: center">
                                                             <i><i>👉🏾&nbsp;</i></i>to have real connections with
