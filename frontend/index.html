@@ -27,11 +27,11 @@
           
           <form id="experience-form" action="https://langchain-project-main.vercel.app/experience" method="POST" autocomplete="off">
             <div class="input-container">
-              <input type="text" name="subject" class="input" />
+              <input type="text" name="subject" class="input" required/>
               <label for="">User's subject</label>
             </div>
             <div class="input-container">
-              <input type="text" name="problem" class="input" />
+              <input type="text" name="problem" class="input" required/>
               <label for="">User's problem</label>
             </div>
             <input type="submit" value="Next" class="btn" />
@@ -55,20 +55,6 @@
             </div>
           </div>
         </div>
-
-        <div class="contact-form">
-          <span class="circle one"></span>
-          <span class="circle two"></span>
-
-          <form id= "intro-form" action="https://langchain-project-main.vercel.app/intro" method="POST" autocomplete="off">
-            <h3 class="title">User's introduction</h3>
-            <div class="input-container textarea">
-              <textarea name="intro" class="input"></textarea>
-              <label for="">Introduction</label>
-            </div>
-            <input type="submit" value="Send" class="btn" />
-          </form>
-        </div>
       </div>
     </div>
 
@@ -78,32 +64,13 @@
         document.getElementById("experience-form").addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent the default form submission behavior
 
-        // Disable the submit button in the intro-form
-        document.querySelector("#intro-form input[type='submit']").disabled = true;
-        document.querySelector("#intro-form input[type='submit']").classList.add("disabled");
+      
 
         
         setTimeout(function() {
-                document.querySelector("#intro-form input[type='submit']").disabled = false;
-                document.querySelector("#intro-form input[type='submit']").classList.remove("disabled");
-        }, 15000); // 15 seconds delay (in milliseconds)
-        fetch("https://langchain-project-main.vercel.app/experience", {
-            method: "POST",
-            body: new FormData(event.target)
+                window.location.href = "send.html";
+        }, 3000); // 15 seconds delay (in milliseconds)
         })
-        .then(response => {
-            // Handle the response here, such as showing a success message or performing additional actions
-
-            // Enable the submit button in the intro-form after 15 seconds
-           
-        })
-        .catch(error => {
-            // Handle any errors that occurred during the request
-
-            // Enable the submit button in the intro-form immediately in case of an error
-            document.querySelector("#intro-form input[type='submit']").disabled = false;
-        });
-    });
     </script>
 </body>
 </html>

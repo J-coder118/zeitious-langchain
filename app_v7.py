@@ -20,7 +20,7 @@ global_subject = ""
 
 # Initialize the language model chain once
 # template = """You are the marketing guru Dan Kennedy and based on the following text: '{var}' you will rewrite it to make it more compelling, keep the same length. {focus}
-exp_pmt = """You are a seasoned {var} coach. You are assisting a client (me) who has this problem {focus}, pls generate the TEN descriptions (each description also has title with description and '@'mark at the end) that client will learn from out this coach."""  
+exp_pmt = """As a {var} coach, you are assisting a client (me) who has this problem {focus}, pls generate the FIVE descriptions (each description also has title with description and '@'mark at the end) that client will learn from out this coach."""  
 
 coach_pmt = """give me an author's introduction of from this short information about me: {user_intro}"""
 
@@ -154,28 +154,9 @@ def intro():
         ttx = global_exp[4].split(": ")
         title4 = ttx[0]
         sentence4 = ttx[1]
-        ttx = global_exp[5].split(": ")
-        title5 = ttx[0]
-        sentence5 = ttx[1]
-
-        ttx = global_exp[6].split(": ")
-        title6 = ttx[0]
-        sentence6 = ttx[1]
-        ttx = global_exp[7].split(": ")
-        title7 = ttx[0]
-        sentence7 = ttx[1]
-        ttx = global_exp[8].split(": ")
-        title8 = ttx[0]
-        sentence8 = ttx[1]
-
-        ttx = global_exp[9].split(": ")
-        title9 = ttx[0]
-        sentence9 = ttx[1]
         rendered_html = HTML.format(title=global_title, imagine=imagine,
                                     title0 = title0, sentence0 = sentence0, title1 = title1, sentence1 = sentence1, title2 = title2, sentence2 = sentence2,
-                                    title3 = title3, sentence3 = sentence3, title4 = title4, sentence4 = sentence4,
-                                    title5 = title5, sentence5 = sentence5, title6 = title6, sentence6 = sentence6, title7 = title7, sentence7 = sentence7, title8 = title8, sentence8=sentence8,
-                                    title9 = title9, sentence9 = sentence9,   info=introduction)
+                                    title3 = title3, sentence3 = sentence3, title4 = title4, sentence4 = sentence4,  info=introduction)
 
         return render_template_string(rendered_html)
     except Exception as e:

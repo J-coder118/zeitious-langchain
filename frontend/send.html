@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .btn.disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        /* Add any additional disabled styles you want */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <span class="big-circle"></span>
+      <img src="img/shape.png" class="square" alt="" />
+      <div class="form">
+        
+
+        <div class="contact-form">
+          <span class="circle one"></span>
+          <span class="circle two"></span>
+
+          <form id= "intro-form" action="https://langchain-project-main.vercel.app/intro" method="POST" autocomplete="off">
+            <h3 class="title">User's introduction</h3>
+            <div class="input-container textarea">
+              <textarea name="intro" class="input" required></textarea>
+              <label for="">Introduction</label>
+            </div>
+            <input type="submit" value="Send" class="btn" />
+          </form>
+          <p id="status" style="color: white;"></p>
+          <div class="social-media" style="margin-left: 35px; margin-bottom: 35px;">
+            <p style="color: white;">Connect with us :</p>
+            <div class="social-icons">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+    
+    <script>
+        document.getElementById("experience-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Disable the submit button in the intro-form
+        document.querySelector("#intro-form input[type='submit']").disabled = true;
+        document.querySelector("#intro-form input[type='submit']").classList.add("disabled");
+
+        
+        setTimeout(function() {
+                document.querySelector("#intro-form input[type='submit']").disabled = false;
+                document.querySelector("#intro-form input[type='submit']").classList.remove("disabled");
+        }, 15000); // 15 seconds delay (in milliseconds)
+        fetch("https://langchain-project-main.vercel.app/experience", {
+            method: "POST",
+            body: new FormData(event.target)
+        })
+        .then(response => {
+            // Handle the response here, such as showing a success message or performing additional actions
+
+            // Enable the submit button in the intro-form after 15 seconds
+           
+        })
+        .catch(error => {
+            // Handle any errors that occurred during the request
+
+            // Enable the submit button in the intro-form immediately in case of an error
+            document.querySelector("#intro-form input[type='submit']").disabled = false;
+        });
+    });
+    </script>
+</body>
+</html>
