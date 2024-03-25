@@ -77,6 +77,7 @@ def gen_exp(subject, problem):
     exp = generate_experience_text(subject, problem)
 
     experiences = exp.split("@")
+    print(experiences)
     if len(experiences) != 11:
         print("eee", len(experiences))
         # exp = regenerate_experience_text(subject, problem)
