@@ -112,7 +112,7 @@ def experience():
         global global_exp, global_title, global_subject
         subject = request.form['subject']
         problem = request.form['problem']
-        intro = request.form['intro']
+        # intro = request.form['intro']
 
         experiences = gen_exp(subject, problem)
         # time.sleep(5)
@@ -121,53 +121,7 @@ def experience():
         global_exp = experiences
         global_title = title
         global_subject = subject
-
-        # print("experience", global_exp)
-        introduction = generate_coach_text(intro)
-        imagine = generate_imagine(global_subject)
-
-        print("ss", global_exp[0])
-        ttx = global_exp[0].split(": ")
-        title0 = ttx[0]
-        sentence0 = ttx[1]
-
-        ttx = global_exp[1].split(": ")
-        title1 = ttx[0]
-        sentence1 = ttx[1]
-
-        ttx = global_exp[2].split(": ")
-        title2 = ttx[0]
-        sentence2 = ttx[1]
-        ttx = global_exp[3].split(": ")
-        title3 = ttx[0]
-        sentence3 = ttx[1]
-        ttx = global_exp[4].split(": ")
-        title4 = ttx[0]
-        sentence4 = ttx[1]
-        ttx = global_exp[5].split(": ")
-        title5 = ttx[0]
-        sentence5 = ttx[1]
-
-        ttx = global_exp[6].split(": ")
-        title6 = ttx[0]
-        sentence6 = ttx[1]
-        ttx = global_exp[7].split(": ")
-        title7 = ttx[0]
-        sentence7 = ttx[1]
-        ttx = global_exp[8].split(": ")
-        title8 = ttx[0]
-        sentence8 = ttx[1]
-
-        ttx = global_exp[9].split(": ")
-        title9 = ttx[0]
-        sentence9 = ttx[1]
-        rendered_html = HTML.format(title=global_title, imagine=imagine,
-                                    title0 = title0, sentence0 = sentence0, title1 = title1, sentence1 = sentence1, title2 = title2, sentence2 = sentence2,
-                                    title3 = title3, sentence3 = sentence3, title4 = title4, sentence4 = sentence4,
-                                    title5 = title5, sentence5 = sentence5, title6 = title6, sentence6 = sentence6, title7 = title7, sentence7 = sentence7, title8 = title8, sentence8=sentence8,
-                                    title9 = title9, sentence9 = sentence9,   info=introduction)
-
-        return render_template_string(rendered_html)
+        return f"{len(experiences)}"
     except Exception as e:
         return f"error_subject: {e}"
 
