@@ -5,6 +5,7 @@ from langchain_openai import ChatOpenAI
 from flask import Flask, request, render_template, render_template_string
 # from langchain.chat_models import ChatOpenAI
 import os
+import time
 
 load_dotenv()
 api_key = os.getenv('OPENAI_API_KEY')
@@ -107,6 +108,7 @@ def experience():
         # intro = request.form['intro']
 
         experiences = gen_exp(subject, problem)
+        time.sleep(5)
         title = generate_title(subject)
         
         global_exp = experiences
@@ -125,6 +127,7 @@ def intro():
         intro = request.form['intro']
         # print("experience", global_exp)
         introduction = generate_coach_text(intro)
+        time.sleep(5)
         imagine = generate_imagine(global_subject)
         # Insert variable values into the template using string formatting
         ttx = global_exp[0].split(": ")
