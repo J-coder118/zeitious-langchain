@@ -20,7 +20,7 @@ global_subject = ""
 
 # Initialize the language model chain once
 # template = """You are the marketing guru Dan Kennedy and based on the following text: '{var}' you will rewrite it to make it more compelling, keep the same length. {focus}
-exp_pmt = """You are a seasoned {var} coach. You are assisting a client (me) who has this problem {focus}, pls generate the TEN descriptions (each description has '@'mark at the end) that client will learn from out this coach."""  
+exp_pmt = """You are a seasoned {var} coach. You are assisting a client (me) who has this problem {focus}, pls generate the TEN descriptions (each description also has title with description and '@'mark at the end) that client will learn from out this coach."""  
 
 coach_pmt = """give me an author's introduction of from this short information about me: {user_intro}"""
 
@@ -136,6 +136,7 @@ def intro():
         introduction = generate_coach_text(intro)
         imagine = generate_imagine(global_subject)
         # Insert variable values into the template using string formatting
+        print("ss", global_exp[0])
         ttx = global_exp[0].split(": ")
         title0 = ttx[0]
         sentence0 = ttx[1]
