@@ -20,7 +20,7 @@ global_subject = ""
 
 # Initialize the language model chain once
 # template = """You are the marketing guru Dan Kennedy and based on the following text: '{var}' you will rewrite it to make it more compelling, keep the same length. {focus}
-exp_pmt = """As a {var} coach, you are assisting a client (me) who has this problem {focus}, pls generate the FIVE descriptions (each description also has title with description and '@'mark at the end) that client will learn from out this coach."""  
+exp_pmt = """As a {var} coach, you are assisting a client (me) who has this problem {focus}, pls generate the FIVE descriptions (each description also has title with description and put '@'mark at the end) that client will learn from out this coach."""  
 
 coach_pmt = """give me an author's introduction of from this short information about me: {user_intro}"""
 
@@ -86,15 +86,16 @@ def gen_exp(subject, problem):
 
     experiences = exp.split("@")
     # print(experiences)
-    # if len(experiences) != 11:
-    #     print("eee", len(experiences))
-    #     # exp = regenerate_experience_text(subject, problem)
-    #     # experiences = exp.split("\n\n")
-    #     experiences = exp.split("\n\n")
-    #     return experiences
-    #     # gen_exp(subject, problem)
-    # else:
-    print("---------------------@", len(experiences))
+    if len(experiences) != 6:
+        print("eee", len(experiences))
+        # exp = regenerate_experience_text(subject, problem)
+        # experiences = exp.split("\n\n")
+        experiences = exp.split("\n\n")
+        print("---------------------ddddd", len(experiences))
+        return experiences
+        # gen_exp(subject, problem)
+    else:
+        print("---------------------@", len(experiences))
     return experiences
     
 def generate_imagine(subject):
@@ -121,6 +122,7 @@ def experience():
         global_exp = experiences
         global_title = title
         global_subject = subject
+        print(experiences)
         return f"{len(experiences)}"
     except Exception as e:
         return f"error_subject: {e}"
@@ -137,21 +139,21 @@ def intro():
         imagine = generate_imagine(global_subject)
         # Insert variable values into the template using string formatting
         print("ss", global_exp[0])
-        ttx = global_exp[0].split(": ")
+        ttx = global_exp[0].split(":")
         title0 = ttx[0]
         sentence0 = ttx[1]
-
-        ttx = global_exp[1].split(": ")
+        print("--------------------", title0, sentence0)
+        ttx = global_exp[1].split(":")
         title1 = ttx[0]
         sentence1 = ttx[1]
 
-        ttx = global_exp[2].split(": ")
+        ttx = global_exp[2].split(":")
         title2 = ttx[0]
         sentence2 = ttx[1]
-        ttx = global_exp[3].split(": ")
+        ttx = global_exp[3].split(":")
         title3 = ttx[0]
         sentence3 = ttx[1]
-        ttx = global_exp[4].split(": ")
+        ttx = global_exp[4].split(":")
         title4 = ttx[0]
         sentence4 = ttx[1]
         rendered_html = HTML.format(title=global_title, imagine=imagine,
