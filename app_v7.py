@@ -26,7 +26,7 @@ Understanding the Basics of Machine Learning: In this session, you will learn ab
 
 ' """  
 
-coach_pmt = """give me an author's introduction of from this short information about me: {user_intro}"""
+coach_pmt = """give me an author's introduction in dynamic way from this short information about me: {user_intro}"""
 
 title_pmt = """give me One and only attractive title for website from this subject without quotation.
                 subject: {subject}"""
