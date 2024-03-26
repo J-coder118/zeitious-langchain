@@ -143,7 +143,9 @@ HTML = """
                                                     <div style="text-align: center; color: #fff">
                                                         <span class="white-color-text"><span data-cke-bookmark="1"
                                                                 style="display: none">&nbsp;</span>
+                                                                <div style="text-align: center;">
                                                                 {header_title}
+                                                                </div>
                                                                 </span><br />
                                                     </div>
                                                 </div>
