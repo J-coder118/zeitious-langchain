@@ -119,6 +119,7 @@ def experience():
         # time.sleep(5)
         title = generate_title(subject)
         
+        print("experience", experiences)
         global_exp = experiences
         global_title = title
         global_subject = subject
@@ -142,7 +143,7 @@ def intro():
         ttx = global_exp[0].split(":")
         title0 = ttx[0]
         sentence0 = ttx[1]
-        print("--------------------", title0, sentence0)
+        print("--------------------", title0, "++++++++++++++++++", sentence0)
         ttx = global_exp[1].split(":")
         title1 = ttx[0]
         sentence1 = ttx[1]
