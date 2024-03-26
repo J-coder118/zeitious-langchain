@@ -150,11 +150,9 @@ HTML = """
                                                 <div class="opt-text-wrapper">
                                                     <div style="text-align: center; color: #fff">
                                                         <span class="white-color-text"><span data-cke-bookmark="1"
-                                                                style="display: none">&nbsp;</span>2024 brings change.<br />The world is changing.<br />As the world evolves, so does your work and industry.
-                                                                <br />
-                                                                Unlock your full potential with expert guidance! Join us to turn your dreams into reality.<br /><br />
-                                                            <span class="primary-color-text"
-                                                                style="color: #bf973f"><b>Now is the moment to discover how to enhance yourself.</b></span></span><br />
+                                                                style="display: none">&nbsp;</span>
+                                                                {header_title}
+                                                                </span><br />
                                                     </div>
                                                 </div>
                                             </div>
@@ -524,6 +522,47 @@ HTML = """
                             </div>
                         </div>
                     </div>
+                    <div opt-id="33" class="col s12 m4"
+                        style="padding: 0px 10px; background-color: #000; color: #fff; margin: 5px; width: 30%;">
+                        <div class="col__style col__style--top opt-border"
+                            style="padding: 20px; background-color: transparent; ">
+                            <div class="js-opt-bg-img bg-color-overlay dark-color-background" style="opacity: 1;"></div>
+                            <div class="sub-row">
+                                <div class="sub-col s1">
+                                    <div class="el__style el-id-37"
+                                        style="margin: 0px auto 10px; padding: 0px; left: 0px; text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-row ">
+                                <div class="sub-col s1">
+                                    <div class="el__style el-id-35"
+                                        style="margin-top: 10px; margin-bottom: 0px; padding: 0px;">
+                                        <div class="opt-element dark-color-text h2" opt-id="35"
+                                            opt-element="sub-headline">
+                                            <div class="opt-text-wrapper">
+                                                <div style="text-align:center"><b><span class="white-color-text">{title5}</span></b></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-row ">
+                                <div class="sub-col s1">
+                                    <div class="el__style el-id-36"
+                                        style="margin-top: 10px; margin-bottom: 10px; padding: 0px 10px;">
+                                        <div class="opt-element dark-color-text body-text" opt-id="36"
+                                            opt-element="text" style="font-size: 18px; line-height: 27px;">
+                                            <div class="opt-text-wrapper">
+                                                <div style="text-align:center"><span class="white-color-text">{sentence5}.</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     
                 <div class="row" style="z-index: 1;">
                     <div opt-id="31" class="col s12 m12 " style="padding: 59px 0px 0px;">
@@ -587,7 +626,7 @@ HTML = """
                                                                         style="display:none">&nbsp;</span></b></span></span></span><br>
                                                 </div>
                                                 <div style="margin-left: 42px;" class="opt-text-wrapper"><span
-                                                    class="white-color-text">{info}.</b></span><br></div>
+                                                    class="white-color-text">{info}</b></span><br></div>
                                             </div>
                                         </div>
                                     </div>

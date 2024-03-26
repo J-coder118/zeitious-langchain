@@ -20,7 +20,7 @@ global_subject = ""
 
 # Initialize the language model chain once
 # template = """You are the marketing guru Dan Kennedy and based on the following text: '{var}' you will rewrite it to make it more compelling, keep the same length. {focus}
-exp_pmt = """As a {var} coach, you are assisting a client (me) who has this problem {focus}, pls generate the FIVE descriptions that client will learn from out this coach like this type
+exp_pmt = """As a {var} coach, you are assisting a client (me) who has this problem {focus}, pls generate the SIX descriptions that client will learn from out this coach like this type
 '
 Understanding the Basics of Machine Learning: In this session, you will learn about the fundamental concepts of machine learning, including algorithms, models, and data preprocessing techniques. We will break down complex topics into easily digestible chunks to help you grasp the key principles of ML.@
 
@@ -47,6 +47,19 @@ title_pmt = """give me One and only attractive title for website from this subje
     
 #     """
 
+htitle_pmt = """
+"<span class="white-color-text"><span data-cke-bookmark="1"
+style="display: none">&nbsp;</span>
+2024 brings change.<br />
+The world is changing.<br />
+As the world evolves, so does your work and industry.
+<br />
+Unlock your full potential with expert guidance! Join us to turn your dreams into reality.<br /><br />
+<span class="primary-color-text"
+style="color: #bf973f"><b>Now is the moment to discover how to enhance yourself.</b></span></span><br />"
+give me points like above (put <br /> at end of each sentence) for an {subject} coach website
+"""
+
 imagine_pmt = """
 "👉🏾 Waking up in the morning feeling completely excited about who you are BEING in the world and what are you doing with your time.
  👉🏾 Feeling that spark of passion, things that deeply matters to you.
@@ -67,6 +80,9 @@ llm_chain_title = LLMChain(prompt=prompt_title, llm=llm)
 
 prompt_imagine = PromptTemplate(template=imagine_pmt, input_variables=["subject"])
 llm_imagine_title = LLMChain(prompt=prompt_imagine, llm=llm)
+
+prompt_htitle = PromptTemplate(template=htitle_pmt, input_variables=["subject"])
+llm_header_title = LLMChain(prompt=prompt_htitle, llm=llm)
 
 # Define a function to generate compelling text using the language model chain
 def generate_experience_text(var, focus):
@@ -101,6 +117,11 @@ def gen_exp(subject, problem):
     else:
         print("---------------------@", len(experiences))
     return experiences
+
+def generate_header_title(subject):
+    input_dict = {"subject": subject}
+    result = llm_header_title.invoke(input_dict)
+    return result["text"]
     
 def generate_imagine(subject):
     input_dict = {"subject": subject}
@@ -142,6 +163,7 @@ def intro():
         # print("experience", global_exp)
         introduction = generate_coach_text(intro)
         imagine = generate_imagine(global_subject)
+        htitle = generate_header_title(global_subject)
         # Insert variable values into the template using string formatting
         print("ss", global_exp[0])
         ttx = global_exp[0].split(":")
@@ -161,9 +183,13 @@ def intro():
         ttx = global_exp[4].split(":")
         title4 = ttx[0]
         sentence4 = ttx[1]
-        rendered_html = HTML.format(title=global_title, imagine=imagine,
+
+        ttx = global_exp[5].split(":")
+        title5 = ttx[0]
+        sentence5 = ttx[1]
+        rendered_html = HTML.format(title=global_title,  header_title = htitle, imagine=imagine,
                                     title0 = title0, sentence0 = sentence0, title1 = title1, sentence1 = sentence1, title2 = title2, sentence2 = sentence2,
-                                    title3 = title3, sentence3 = sentence3, title4 = title4, sentence4 = sentence4,  info=introduction)
+                                    title3 = title3, sentence3 = sentence3, title4 = title4, sentence4 = sentence4, title5 = title5, sentence5 = sentence5, info=introduction)
 
         return render_template_string(rendered_html)
     except Exception as e:
