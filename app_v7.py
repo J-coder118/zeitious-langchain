@@ -121,12 +121,12 @@ def gen_exp(subject, problem):
 def generate_header_title(subject):
     input_dict = {"subject": subject}
     result = llm_header_title.invoke(input_dict)
-    return result["text"]
+    return result["text"].replace('"', '')
     
 def generate_imagine(subject):
     input_dict = {"subject": subject}
     result = llm_imagine_title.invoke(input_dict)
-    return result["text"]
+    return result["text"].replace('"', '')
 
 @app.route('/', methods=['POST'])
 def index():
