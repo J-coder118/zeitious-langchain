@@ -15,6 +15,10 @@
         cursor: not-allowed;
         /* Add any additional disabled styles you want */
       }
+
+      ::placeholder {
+            color: white; /* Change this to the color you want */
+        }
     </style>
   </head>
   <body>
@@ -32,7 +36,7 @@
             <h3 class="title">User's introduction</h3>
             <div class="input-container textarea">
               <textarea name="intro" class="input" placeholder="Please provide a short introduction, including your name, field of expertise, and notable accomplishments" required></textarea>
-              <label for="">Introduction</label>
+              <label for=""></label>
             </div>
             <input type="submit" value="Send" class="btn" />
           </form>

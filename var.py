@@ -113,15 +113,7 @@ HTML = """
                         ">
                                             <div class="opt-element opt-video video-background-wrapper z-depth-30 z-depth-30--hover opt-border complementary-color-border complementary-color-border--hover"
                                                 opt-id="5" data-video-provider="vimeo">
-                                                <div class="video-background-container video-background--no-transform">
-                                                    <div class="video-container">
-                                                        <iframe allowfullscreen=""
-                                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                                            src="https://player.vimeo.com/video/908128441?h=dabf2b4d1a&amp;autoplay=1&amp;loop=0"
-                                                            frameborder="0"
-                                                            data-src="https://player.vimeo.com/video/908128441?h=dabf2b4d1a&amp;autoplay=1&amp;loop=0"></iframe>
-                                                    </div>
-                                                </div>
+                                           
                                                 <div class="video-background-overlay video-background-overlay--normal">
                                                 </div>
                                             </div>
@@ -662,33 +654,13 @@ HTML = """
                                             style="font-size: 38px; line-height: 44px;">
                                             <div class="opt-text-wrapper">
                                                 <div style="text-align:center"><span class="primary-color-text"><span
-                                                            class="dark-color-text">Contrary to popular belief, I did
-                                                            not just work HARDER...&nbsp;</span></span><br></div>
+                                                            class="dark-color-text">{last}</span></span><br></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="sub-row ">
-                                <div class="sub-col s1">
-                                    <div class="el__style el-id-6"
-                                        style="margin-top: 24px; margin-bottom: 0px; padding: 0px 0px 0px 10px;">
-                                        <div class="opt-element dark-color-text body-text" opt-id="6" opt-element="text"
-                                            data-font-family="'Open Sans Condensed', sans-serif" mobile-font-size="18px"
-                                            style="font-family: &quot;Open Sans Condensed&quot;, sans-serif; font-size: 22px; line-height: 34px;">
-                                            <div class="opt-text-wrapper">
-                                                <div style="text-align:center"><span><span><span><span
-                                                                    style="color:#000000"><span><span><span>I committed
-                                                                                to myself and my family to learn how to
-                                                                                <b>LEARN</b>.<br>To change how I
-                                                                                think.<br>I learned how to re-invent
-                                                                                myself.</span></span></span></span></span></span></span><br>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div class="sub-row ">
                                 <div class="sub-col s1">
                                     <div class="el__style el-id-7"
@@ -739,9 +711,7 @@ HTML = """
                                             style="font-size: 21px; line-height: 33px;">
                                             <div class="opt-text-wrapper">
                                                 <div style="text-align:center"><span class="white-color-text"><span
-                                                            style="font-family:Montserrat,sans-serif; color: #fff;"><b>BECAUSE
-                                                                REINVENTING YOURSELF IS NOT AN OPTION…<br>IT'S A
-                                                                NECESSITY</b></span></span><br></div>
+                                                            style="font-family:Montserrat,sans-serif; color: #fff;"><b>{footer}</b></span></span><br></div>
                                             </div>
                                         </div>
                                     </div>

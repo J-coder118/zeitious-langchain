@@ -69,9 +69,9 @@
         document.getElementById("status").style.opacity = 1
 
         
-        // setTimeout(function() {
-                
-        // }, 8000); // 15 seconds delay (in milliseconds)
+         setTimeout(function() {
+          window.location.href = "send.html";
+         }, 15000); // 15 seconds delay (in milliseconds)
         fetch("https://langchain-project-main.vercel.app/experience", {
             method: "POST",
             body: new FormData(event.target)
@@ -79,7 +79,7 @@
         .then(response => {
           
           console.log("sent", response.json())
-          window.location.href = "send.html";
+          
             // Handle the response here, such as showing a success message or performing additional actions
 
             // Enable the submit button in the intro-form after 15 seconds
