@@ -67,22 +67,22 @@ imagine_pmt = """
 give me points like above (with 👉🏾 and put <br /> at end of each sentence) for an {subject} coach website
     """
 
-last_pmt = """
-generate a content like this for a {subject} coach (put <br /> at end of each sentence)
-"Contrary to popular belief, I did not just work HARDER...
-I committed to myself and my family to learn how to LEARN.
-To change how I think.
-I learned how to re-invent myself."
-"""
+# last_pmt = """
+# generate a content like this for a {subject} coach (put <br /> at end of each sentence)
+# "Contrary to popular belief, I did not just work HARDER...
+# I committed to myself and my family to learn how to LEARN.
+# To change how I think.
+# I learned how to re-invent myself."
+# """
 
-footer_pmt = """
-generate a smaple quote like this 
-"BECAUSE REINVENTING YOURSELF IS NOT AN OPTION…
-IT'S A NECESSITY
-" 
-for a {subject} coach (put <br /> at end of each sentence)
+# footer_pmt = """
+# generate a smaple quote like this 
+# "BECAUSE REINVENTING YOURSELF IS NOT AN OPTION…
+# IT'S A NECESSITY
+# " 
+# for a {subject} coach (put <br /> at end of each sentence)
 
-"""    
+# """    
 
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=1, api_key=api_key)
 prompt_exp = PromptTemplate(template=exp_pmt, input_variables=["var", "focus"])
@@ -100,11 +100,11 @@ llm_imagine_title = LLMChain(prompt=prompt_imagine, llm=llm)
 prompt_htitle = PromptTemplate(template=htitle_pmt, input_variables=["subject"])
 llm_header_title = LLMChain(prompt=prompt_htitle, llm=llm)
 
-prompt_last = PromptTemplate(template=last_pmt, input_variables=["subject"])
-llm_last_title = LLMChain(prompt=prompt_htitle, llm=llm)
+# prompt_last = PromptTemplate(template=last_pmt, input_variables=["subject"])
+# llm_last_title = LLMChain(prompt=prompt_htitle, llm=llm)
 
-prompt_footer = PromptTemplate(template=footer_pmt, input_variables=["subject"])
-llm_footer_title = LLMChain(prompt=prompt_footer, llm=llm)
+# prompt_footer = PromptTemplate(template=footer_pmt, input_variables=["subject"])
+# llm_footer_title = LLMChain(prompt=prompt_footer, llm=llm)
 
 # Define a function to generate compelling text using the language model chain
 def generate_experience_text(var, focus):
@@ -150,15 +150,15 @@ def generate_imagine(subject):
     result = llm_imagine_title.invoke(input_dict)
     return result["text"].replace('"', '')
 
-def generate_last(subject):
-    input_dict = {"subject": subject}
-    result = llm_last_title.invoke(input_dict)
-    return result["text"].replace('"', '')
+# def generate_last(subject):
+#     input_dict = {"subject": subject}
+#     result = llm_last_title.invoke(input_dict)
+#     return result["text"].replace('"', '')
 
-def generate_footer(subject):
-    input_dict = {"subject": subject}
-    result = llm_footer_title.invoke(input_dict)
-    return result["text"].replace('"', '')
+# def generate_footer(subject):
+#     input_dict = {"subject": subject}
+#     result = llm_footer_title.invoke(input_dict)
+#     return result["text"].replace('"', '')
 
 
 @app.route('/', methods=['POST'])
