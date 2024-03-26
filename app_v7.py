@@ -198,8 +198,8 @@ def intro():
         imagine = generate_imagine(global_subject)
         htitle = generate_header_title(global_subject)
 
-        last = generate_last(global_subject)
-        footer = generate_footer(global_subject)
+        # last = generate_last(global_subject)
+        # footer = generate_footer(global_subject)
         # Insert variable values into the template using string formatting
         print("ss", global_exp[0])
         ttx = global_exp[0].split(":")
@@ -225,7 +225,7 @@ def intro():
         sentence5 = ttx[1]
         rendered_html = HTML.format(title=global_title,  header_title = htitle, imagine=imagine,
                                     title0 = title0, sentence0 = sentence0, title1 = title1, sentence1 = sentence1, title2 = title2, sentence2 = sentence2,
-                                    title3 = title3, sentence3 = sentence3, title4 = title4, sentence4 = sentence4, title5 = title5, sentence5 = sentence5, info=introduction, last = last, footer = footer)
+                                    title3 = title3, sentence3 = sentence3, title4 = title4, sentence4 = sentence4, title5 = title5, sentence5 = sentence5, info=introduction)
 
         return render_template_string(rendered_html)
     except Exception as e:
