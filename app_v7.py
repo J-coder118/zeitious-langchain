@@ -57,7 +57,7 @@ As the world evolves, so does your work and industry.
 Unlock your full potential with expert guidance! Join us to turn your dreams into reality.<br /><br />
 <span class="primary-color-text"
 style="color: #bf973f"><b>Now is the moment to discover how to enhance yourself.</b></span></span><br />"
-generate a similar content like this "" for a {subject} coach (put <br /> at end of each sentence)
+generate a similar content like above for a {subject} coach (put <br /> at end of each sentence)
 """
 
 imagine_pmt = """
