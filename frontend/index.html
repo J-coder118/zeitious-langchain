@@ -55,6 +55,8 @@
             </div>
           </div>
         </div>
+
+        
       </div>
     </div>
 
@@ -70,7 +72,23 @@
         setTimeout(function() {
                 window.location.href = "send.html";
         }, 8000); // 15 seconds delay (in milliseconds)
+        fetch("https://langchain-project-main.vercel.app/experience", {
+            method: "POST",
+            body: new FormData(event.target)
         })
+        .then(response => {
+            // Handle the response here, such as showing a success message or performing additional actions
+
+            // Enable the submit button in the intro-form after 15 seconds
+           
+        })
+        .catch(error => {
+            // Handle any errors that occurred during the request
+
+            // Enable the submit button in the intro-form immediately in case of an error
+            document.querySelector("#intro-form input[type='submit']").disabled = false;
+        });
+    });
     </script>
 </body>
 </html>

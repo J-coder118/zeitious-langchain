@@ -20,7 +20,11 @@ global_subject = ""
 
 # Initialize the language model chain once
 # template = """You are the marketing guru Dan Kennedy and based on the following text: '{var}' you will rewrite it to make it more compelling, keep the same length. {focus}
-exp_pmt = """As a {var} coach, you are assisting a client (me) who has this problem {focus}, pls generate the FIVE descriptions (each description also has title with description and put '@'mark at the end) that client will learn from out this coach."""  
+exp_pmt = """As a {var} coach, you are assisting a client (me) who has this problem {focus}, pls generate the FIVE descriptions that client will learn from out this coach like this type
+'
+Understanding the Basics of Machine Learning: In this session, you will learn about the fundamental concepts of machine learning, including algorithms, models, and data preprocessing techniques. We will break down complex topics into easily digestible chunks to help you grasp the key principles of ML.@
+
+' """  
 
 coach_pmt = """give me an author's introduction of from this short information about me: {user_intro}"""
 
