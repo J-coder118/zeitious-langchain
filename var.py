@@ -48,14 +48,7 @@ HTML = """
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>LifeCoach - One Page Coach & Mentor Template</title>
-    <style>
-    @media (max-width: 600px) {
-    .container .row {
-        display: block;
-    }
-}
-
-    </style>
+  
 </head>
 
 <body data-spy="scroll" data-target=".navbar" class="has-loading-screen" style="color: #191919; font-family: 'Poppins', sans-serif; font-weight: 400; font-size: .9375rem; margin: 0; padding: 0;">
