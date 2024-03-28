@@ -48,6 +48,14 @@ HTML = """
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>LifeCoach - One Page Coach & Mentor Template</title>
+    <style>
+    @media (max-width: 600px) {
+    .container .row {
+        display: block;
+    }
+}
+
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" class="has-loading-screen" style="color: #191919; font-family: 'Poppins', sans-serif; font-weight: 400; font-size: .9375rem; margin: 0; padding: 0;">
@@ -63,7 +71,7 @@ HTML = """
               center center / cover no-repeat;
           ">
                 <div class="js-opt-bg-img image-background-overlay dark-color-background" style="opacity: 0.71"></div>
-                <div class="container block-align--top" style="width: 1140px; padding-right: 35px;padding-left: 35px;margin-right: auto;margin-left: auto;">
+                <div class="container block-align--top" style="max-width: 1140px; padding-right: 35px;padding-left: 35px;margin-right: auto;margin-left: auto;">
                     <div class="row" style="z-index: 2">
                         <div opt-id="8" class="col s12 m12" style="padding: 0px 0px 40px">
                             <div class="col__style col__style--top opt-border" style="padding: 0px">
@@ -180,7 +188,7 @@ HTML = """
                     style="padding: 40px 0px; background-color: transparent">
                     <div class="js-opt-bg-img bg-color-overlay"
                         style="background-color: rgb(245, 245, 245); opacity: 1"></div>
-                    <div class="container block-align--top" style="width: 1140px;padding-right: 35px;padding-left: 35px;margin-right: auto;margin-left: auto;">
+                    <div class="container block-align--top" style="max-width: 1140px;padding-right: 35px;padding-left: 35px;margin-right: auto;margin-left: auto;">
                         <div class="row" style="z-index: 1">
                             <div opt-id="1" class="col s12 m12">
                                 <div class="col__style">
@@ -293,7 +301,7 @@ HTML = """
         <div class="block__style opt-border" opt-id="block-background"
             style="padding: 28px 15px; background: url('https://i.ontraport.com/208582.62b94c0b6f9e48ed12a935e41ce92738.PNG') center center / cover no-repeat;">
             <div class="js-opt-bg-img image-background-overlay dark-color-background" style="opacity: 0.34;"></div>
-            <div class="container block-align--top" style="width: 1140px;padding-right: 35px;padding-left: 35px;margin-right: auto;margin-left: auto;">
+            <div class="container block-align--top" style="max-width: 1140px;padding-right: 35px;padding-left: 35px;margin-right: auto;margin-left: auto;">
                 <div class="row" style="z-index: 3;">
                     <div opt-id="1" class="col s12 m12 " style="padding: 0px;">
                         <div class="col__style col__style--top opt-border" style="padding: 0px 0px 30px;">
@@ -317,7 +325,7 @@ HTML = """
                 </div>
                 <div class="row" style="flex-wrap: wrap; z-index: 2; display: flex; ">
                     <div opt-id="33" class="col s12 m4"
-                        style="padding: 0px 10px; background-color: #000; color: #fff; margin: 5px; width: 30%;">
+                        style="padding: 0px 10px; background-color: #000; color: #fff; margin: 5px; width: 30%; ">
                         <div class="col__style col__style--top opt-border"
                             style="padding: 20px; background-color: transparent; ">
                             <div class="js-opt-bg-img bg-color-overlay dark-color-background" style="opacity: 1;"></div>
@@ -437,7 +445,7 @@ HTML = """
                         </div>
                     </div>
                     <div opt-id="33" class="col s12 m4"
-                        style="padding: 0px 10px; background-color: #000; color: #fff; margin: 5px; width: 30%;">
+                        style="padding: 0px 10px; background-color: #000; color: #fff; margin: 5px; width: 30%; ">
                         <div class="col__style col__style--top opt-border"
                             style="padding: 20px; background-color: transparent; ">
                             <div class="js-opt-bg-img bg-color-overlay dark-color-background" style="opacity: 1;"></div>
@@ -643,7 +651,7 @@ HTML = """
         <div class="block__style opt-border" opt-id="block-background"
             style="padding: 10px 45px; background-color: transparent;">
             <div class="js-opt-bg-img bg-color-overlay white-color-background" style="opacity: 1;"></div>
-            <div class="container block-align--top" style="width: 1140px;padding-right: 35px;padding-left: 35px;margin-right: auto;margin-left: auto;">
+            <div class="container block-align--top" style="max-width: 1140px;padding-right: 35px;padding-left: 35px;margin-right: auto;margin-left: auto;">
                 <div class="row" style="z-index: 1;">
                     <div opt-id="1" class="col s12 m12 " style="padding: 0px;">
                         <div class="col__style col__style--center opt-border" style="padding: 40px 0px;">
